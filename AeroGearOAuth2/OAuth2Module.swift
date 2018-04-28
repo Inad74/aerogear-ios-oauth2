@@ -125,6 +125,13 @@ open class OAuth2Module: AuthzModule {
                 self.stopObserving()
                 // ..and update state
                 self.state = .authorizationStateUnknown
+
+                let error = NSError(
+                    domain: AGAuthzErrorDomain,
+                    code: 2,
+                    userInfo: ["NSLocalizedDescriptionKey": "User cancelled authorization."]
+                )
+                completionHandler(nil, error)
             }
         })
 
