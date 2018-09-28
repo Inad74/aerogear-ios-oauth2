@@ -16,7 +16,7 @@
 */
 
 import Foundation
-
+import SafariServices
 import UIKit
 /**
 OAuth2WebViewController is a UIViewController to be used when the Oauth2 flow used an embedded view controller
@@ -49,5 +49,10 @@ open class OAuth2WebViewController: UIViewController, UIWebViewDelegate {
     func loadAddressURL() {
         let req = URLRequest(url: targetURL)
         webView.loadRequest(req)
+    }
+
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        print("DONE")
+        dismiss(animated: true)
     }
 }
