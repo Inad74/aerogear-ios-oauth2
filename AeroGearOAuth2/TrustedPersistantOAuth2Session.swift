@@ -165,7 +165,7 @@ public class KeychainWrap {
         }
 
         if (status == errSecItemNotFound) {
-            print("\(tokenType.rawValue) not found")
+            print("\(tokenType.rawValue) not found 22222")
             return nil
         } else if (status != errSecSuccess) {
             print("Error attempting to retrieve \(tokenType.rawValue) with error code \(status) ")
